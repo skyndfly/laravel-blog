@@ -12,20 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [App\Http\Controllers\Main\IndexController::class, '__invoke'])->name('index');
 
-Route::group(['namespace' => 'Main'], function (){
-   Route::get('/', [App\Http\Controllers\Main\IndexController::class, '__invoke']);
-});
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function (){
-    Route::group(['namespace' => 'Main'], function (){
-        Route::get('/', [App\Http\Controllers\Admin\Main\IndexController::class, '__invoke']);
-    });
-    Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function (){
-        Route::get('/', [App\Http\Controllers\Admin\Category\IndexController::class, '__invoke']);
+Route::prefix('admin')->group(function () {
+    Route::get('/', [App\Http\Controllers\Admin\Main\IndexController::class, '__invoke'])->name('admin.index');
+    Route::prefix('categories')->group(function () {
+        Route::get('/', [App\Http\Controllers\Admin\Category\IndexController::class, '__invoke'])->name('admin.category.index');
+        Route::get('/create', [App\Http\Controllers\Admin\Category\CreateController::class, '__invoke'])->name('admin.category.create');
     });
 });
-
 Auth::routes();
 
 
