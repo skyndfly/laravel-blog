@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'Main'], function (){
-   Route::get('/', [IndexController::class, '__invoke']);
+   Route::get('/', [App\Http\Controllers\Main\IndexController::class, '__invoke']);
+});
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function (){
+    Route::group(['namespace' => 'Main'], function (){
+        Route::get('/', [App\Http\Controllers\Admin\Main\IndexController::class, '__invoke']);
+    });
 });
 
 Auth::routes();
