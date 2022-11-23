@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-5">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Категории</h1>
+                        <h1 class="m-0">Добавить новую категорию</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -19,11 +19,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-primary">
-                            <i class="nav-icon far fa-plus-square"></i>
-                            Новая категория
-                        </a>
+                    <div class="col-4">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Название новой категории:</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Создать</button>
+                        </form>
                     </div>
                 </div>
             </div>
