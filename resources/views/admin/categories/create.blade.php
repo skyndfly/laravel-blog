@@ -20,12 +20,16 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <form>
+                        <form method="post" action="{{ route('admin.category.store') }}">
+                            @csrf
                             <div class="mb-3">
                                 <label class="form-label">Название новой категории:</label>
-                                <input type="email" class="form-control">
+                                <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                                @error("title")
+                                <div class="form-text alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary">Создать</button>
+                            <button type="submit" class="btn btn-primary" >Создать</button>
                         </form>
                     </div>
                 </div>
