@@ -20,7 +20,8 @@ Route::prefix('admin')->group(function () {
     Route::prefix('categories')->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\Category\IndexController::class, '__invoke'])->name('admin.category.index');
         Route::get('/create', [App\Http\Controllers\Admin\Category\CreateController::class, '__invoke'])->name('admin.category.create');
-        Route::post('/', [App\Http\Controllers\Admin\Category\StoreController::class, '__invoke'])->name('admin.category.store');
+        Route::post('/', [App\Http\Controllers\Admin\Category\ShowController::class, '__invoke'])->name('admin.category.store');
+        Route::get('/{category}', [App\Http\Controllers\Admin\Category\ShowController::class, '__invoke'])->name('admin.category.show');
     });
 });
 Auth::routes();
