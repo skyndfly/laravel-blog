@@ -5,7 +5,7 @@
 
     <div class="content-wrapper">
 
-        <div class="content-header">
+        <div class="content-header" id="admin_create">
             <div class="container-fluid">
                 <div class="row mb-5">
                     <div class="col-sm-6">
@@ -20,13 +20,14 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <form method="post" action="{{ route('admin.category.store') }}">
+
+                        <form  method="post" action="{{ route('admin.category.store') }}">
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Название новой категории:</label>
                                 <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                                 @error("title")
-                                <div class="form-text alert alert-danger">{{ $message }}</div>
+                                <div class="form-text alert alert-danger" id="error">{{ $message }}</div>
                                 @enderror
                             </div>
                             <button type="submit" class="btn btn-primary" >Создать</button>
@@ -39,5 +40,9 @@
 
         </section>
     </div>
-
+    @if(session()->has('success'))
+        <div class="alert alert-success" id="message">
+            {{ session('success') }}
+        </div>
+    @endif
 @endsection

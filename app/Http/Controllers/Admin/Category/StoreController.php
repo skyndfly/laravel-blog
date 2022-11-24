@@ -12,6 +12,7 @@ class StoreController extends Controller
     {
         $data = $request->validated();
         Category::create($data);
-        return redirect()->route('admin.category.index');
+        session()->flash('success', 'Новая категория добавлена ');
+        return redirect()->route('admin.category.create');
     }
 }
