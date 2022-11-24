@@ -26,6 +26,27 @@
                         </a>
                     </div>
                 </div>
+                <div class="row mt-3">
+                    <div class="col-4">
+                        <table class="table caption-top">
+                            <caption>Список категорий</caption>
+                            <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Наименование</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($categories as $cat)
+                                    <tr>
+                                        <th scope="row">{{ $cat['id'] }}</th>
+                                        <td>{{ $cat['title'] }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
