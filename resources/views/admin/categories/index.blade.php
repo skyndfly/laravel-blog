@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="admin_category">
 
         <div class="content-header">
             <div class="container-fluid">
@@ -61,9 +61,15 @@
                                         <tr>
                                             <th scope="row">{{ $cat->id }}</th>
                                             <td>{{ $cat->title }}</td>
-                                            <td>
+                                            <td class="action_links">
                                                 <a href="{{route('admin.category.show', $cat->id)}}">
                                                     <i class="fa-solid fa-eye"></i>
+                                                </a>
+                                                <a href="{{route('admin.category.edit', $cat->id)}}" class="edit">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                </a>
+                                                <a href="" class="delete">
+                                                    <i class="fa-solid fa-trash"></i>
                                                 </a>
                                             </td>
                                         </tr>

@@ -4,5 +4,22 @@
             color: #fff;
         }
     }
+    .action_links{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        .edit{
+            color: $warning;
+            &:hover{
+                color: $warning_hover;
+            }
+        }
+        .delete{
+            color: $danger;
+            &:hover{
+                color: $danger_hover;
+            }
+        }
+    }
 
 }
