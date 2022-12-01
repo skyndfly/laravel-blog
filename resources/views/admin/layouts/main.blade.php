@@ -39,7 +39,11 @@
     @include('admin.incudes.nav_admin')
 
     @yield('content')
-
+    @if(session()->has('success'))
+        <div class="alert alert-success" id="message">
+            {{ session('success') }}
+        </div>
+    @endif
     <footer class="main-footer">
         <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
         All rights reserved.

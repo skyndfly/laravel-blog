@@ -4,7 +4,6 @@
 @section('content')
 
     <div class="content-wrapper" id="admin_category">
-
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-5">
@@ -20,7 +19,7 @@
                 </div>
                 <div class="row">
                     <div class="col action_buttons">
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-warning edit">
+                        <a href="{{route('admin.category.edit', $category->id)}}" class="btn btn-warning edit">
                             <i class="fa-solid fa-pen-to-square"></i>
                             Редактировать
                         </a>
@@ -30,7 +29,6 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="row mt-3">
                     <div class="col-6">
                         <div class="card">
@@ -48,9 +46,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- /.card-body -->
                         </div>
-                        <!-- /.card -->
                     </div>
                 </div>
             </div>

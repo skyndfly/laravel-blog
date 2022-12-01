@@ -21,8 +21,9 @@
                 <div class="row">
                     <div class="col-4">
 
-                        <form  method="post" action="#">
+                        <form action="{{route('admin.category.update', $category->id)}}" method="post">
                             @csrf
+                            @method('patch')
                             <div class="mb-3">
                                 <label class="form-label">Редактировать данные:</label>
                                 <input type="text" class="form-control" name="title" value="{{ $category->title }}">
@@ -38,9 +39,4 @@
         </div>
         </section>
     </div>
-    @if(session()->has('success'))
-        <div class="alert alert-success" id="message">
-            {{ session('success') }}
-        </div>
-    @endif
 @endsection

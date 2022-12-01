@@ -36,13 +36,7 @@
                 </div>
             </div>
         </div>
-
-
         </section>
     </div>
-    @if(session()->has('success'))
-        <div class="alert alert-success" id="message">
-            {{ session('success') }}
-        </div>
-    @endif
+
 @endsection

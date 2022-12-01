@@ -2,9 +2,7 @@
 
 
 @section('content')
-
     <div class="content-wrapper" id="admin_category">
-
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-5">
@@ -26,18 +24,15 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="row mt-3">
                     <div class="col-6">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Список категорий</h3>
-
                                 <div class="card-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
                                         <input type="text" name="table_search" class="form-control float-right"
                                                placeholder="Поиск">
-
                                         <div class="input-group-append">
                                             <button type="submit" class="btn btn-default">
                                                 <i class="fas fa-search"></i>
@@ -46,7 +41,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <thead>
@@ -77,16 +71,11 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- /.card-body -->
                         </div>
-                        <!-- /.card -->
                     </div>
                 </div>
             </div>
         </div>
-
-
         </section>
     </div>
-
 @endsection
