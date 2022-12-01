@@ -16,6 +16,9 @@
         }
         .delete{
             color: $danger;
+            background-color: transparent;
+            outline: none;
+            border: none;
             &:hover{
                 color: $danger_hover;
             }

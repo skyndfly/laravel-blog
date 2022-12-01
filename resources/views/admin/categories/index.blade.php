@@ -44,14 +44,14 @@
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <thead>
-                                        <tr>
-                                            <th scope="col">id</th>
-                                            <th scope="col">Наименование</th>
-                                            <th scope="col">Действия</th>
-                                        </tr>
+                                    <tr>
+                                        <th scope="col">id</th>
+                                        <th scope="col">Наименование</th>
+                                        <th scope="col">Действия</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($categories as $cat)
+                                    @forelse($categories as $cat)
                                         <tr>
                                             <th scope="row">{{ $cat->id }}</th>
                                             <td>{{ $cat->title }}</td>
@@ -62,12 +62,20 @@
                                                 <a href="{{route('admin.category.edit', $cat->id)}}" class="edit">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
-                                                <a href="" class="delete">
-                                                    <i class="fa-solid fa-trash"></i>
-                                                </a>
+                                                <form action="{{ route('admin.category.delete', $cat->id) }}"
+                                                      method="post">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button class="delete" type="submit"><i
+                                                            class="fa-solid fa-trash"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                       <tr>
+                                           <td>Здесь ничего нет! Создайте новую категорию или зайдите позже</td>
+                                       </tr>
+                                    @endforelse
                                     </tbody>
                                 </table>
                             </div>
