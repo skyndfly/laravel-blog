@@ -31,6 +31,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'index')->name('admin.tag.index');
         Route::get('create', 'create')->name('admin.tag.create');
         Route::post('/', 'store')->name('admin.tag.store');
+        Route::get('/{tag}', 'show')->name('admin.tag.show');
     });
 });
 

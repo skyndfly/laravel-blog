@@ -9,17 +9,27 @@ use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $data = Tag::all();
         return view('admin.tags.index', ['tags' => $data]);
     }
-    public function create(){
+
+    public function create()
+    {
         return view('admin.tags.create');
     }
-    public function store(StoreRequest $request){
+
+    public function store(StoreRequest $request)
+    {
         $data = $request->validated();
         Tag::create($data);
         session()->flash('success', 'Тег создан');
         return redirect()->route('admin.tag.create');
+    }
+
+    public function show(Tag $tag)
+    {
+        return view('admin.tags.show', ['tag' => $tag]);
     }
 }

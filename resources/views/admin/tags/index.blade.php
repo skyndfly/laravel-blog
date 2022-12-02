@@ -56,7 +56,7 @@
                                             <th scope="row">{{ $tag->id }}</th>
                                             <td>{{ $tag->title }}</td>
                                             <td class="action_links">
-                                                <a href="{{route('admin.category.show', $tag->id)}}">
+                                                <a href="{{route('admin.tag.show', $tag->id)}}">
                                                     <i class="fa-solid fa-eye"></i>
                                                 </a>
                                                 <a href="{{route('admin.category.edit', $tag->id)}}" class="edit">
