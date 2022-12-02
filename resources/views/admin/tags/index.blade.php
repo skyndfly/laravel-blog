@@ -18,7 +18,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.tag.create') }}" class="btn btn-primary">
                             <i class="nav-icon far fa-plus-square"></i>
                             Добавить тег
                         </a>
@@ -53,16 +53,16 @@
                                     <tbody>
                                     @forelse($tags as $tag)
                                         <tr>
-                                            <th scope="row">{{ $tag['id'] }}</th>
-                                            <td>{{ $tag['title'] }}</td>
+                                            <th scope="row">{{ $tag->id }}</th>
+                                            <td>{{ $tag->title }}</td>
                                             <td class="action_links">
-                                                <a href="{{route('admin.category.show', $tag['id'])}}">
+                                                <a href="{{route('admin.category.show', $tag->id)}}">
                                                     <i class="fa-solid fa-eye"></i>
                                                 </a>
-                                                <a href="{{route('admin.category.edit', $tag['id'])}}" class="edit">
+                                                <a href="{{route('admin.category.edit', $tag->id)}}" class="edit">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
-                                                <form action="{{ route('admin.category.delete', $tag['id']) }}"
+                                                <form action="{{ route('admin.category.delete', $tag->id) }}"
                                                       method="post">
                                                     @csrf
                                                     @method('delete')
@@ -74,7 +74,7 @@
                                     @empty
                                         <tr>
                                             <td>
-                                                <strong>Здесь ничего нет! Создайте новую категорию или зайдите позже</strong>
+                                                <strong>Здесь ничего нет! Добавьте новый тег или зайдите позже</strong>
                                             </td>
                                         </tr>
                                     @endforelse
