@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Tag\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,11 @@ Route::prefix('admin')->group(function () {
         Route::patch('/{category}', [App\Http\Controllers\Admin\Category\UpdateController::class, '__invoke'])->name('admin.category.update');
         Route::delete('/{category}', [App\Http\Controllers\Admin\Category\DeleteController::class, '__invoke'])->name('admin.category.delete');
     });
+    Route::prefix('tags')->controller(TagController::class)->group(function(){
+        Route::get('/', 'index')->name('admin.tag.index');
+    });
 });
+
 Auth::routes();
 
 
