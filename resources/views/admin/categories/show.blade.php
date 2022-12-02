@@ -18,15 +18,21 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col action_buttons">
+                    <div class="col action_buttons d-flex gap-2">
                         <a href="{{route('admin.category.edit', $category->id)}}" class="btn btn-warning edit">
                             <i class="fa-solid fa-pen-to-square"></i>
                             Редактировать
                         </a>
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-danger delete">
-                            <i class="fa-solid fa-trash"></i>
-                            Удалить
-                        </a>
+                        <form action="{{ route('admin.category.delete', $category->id) }}"
+                              method="post">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger delete" type="submit">
+                                <i class="fa-solid fa-trash"></i>
+                                Удалить
+                            </button>
+                        </form>
+
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -35,14 +41,14 @@
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">ID</th>
-                                            <td>{{ $category->id}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Наименование</th>
-                                            <td>{{ $category->title }}</td>
-                                        </tr>
+                                    <tr>
+                                        <th scope="row">ID</th>
+                                        <td>{{ $category->id}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Наименование</th>
+                                        <td>{{ $category->title }}</td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

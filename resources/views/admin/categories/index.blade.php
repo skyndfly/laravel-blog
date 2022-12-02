@@ -25,8 +25,8 @@
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-6">
-                        <div class="card">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card col-8">
                             <div class="card-header">
                                 <h3 class="card-title">Список категорий</h3>
                                 <div class="card-tools">
@@ -73,7 +73,9 @@
                                         </tr>
                                     @empty
                                        <tr>
-                                           <td>Здесь ничего нет! Создайте новую категорию или зайдите позже</td>
+                                           <td>
+                                               <strong>Здесь ничего нет! Создайте новую категорию или зайдите позже</strong>
+                                           </td>
                                        </tr>
                                     @endforelse
                                     </tbody>
