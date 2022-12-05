@@ -33,13 +33,24 @@ class TagController extends Controller
     {
         return view('admin.tags.show', ['tag' => $tag]);
     }
-    public function edit(Tag $tag){
+
+    public function edit(Tag $tag)
+    {
         return view('admin.tags.edit', ['tag' => $tag]);
     }
-    public function update(Tag $tag, StoreRequest $request){
+
+    public function update(Tag $tag, StoreRequest $request)
+    {
         $data = $request->validated();
         $tag->update($data);
-        session('success', 'Тег обновлен');
+        session()->flash('success', 'Тег обновлен');
         return redirect()->route('admin.tag.edit', ['tag' => $tag]);
+    }
+
+    public function delete(Tag $tag)
+    {
+        $tag->delete();
+        session()->flash('info', 'Тег удален');
+        return redirect()->route('admin.tag.index');
     }
 }

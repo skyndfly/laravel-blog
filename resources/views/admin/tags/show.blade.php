@@ -23,7 +23,7 @@
                             <i class="fa-solid fa-pen-to-square"></i>
                             Редактировать
                         </a>
-                        <form action="{{ route('admin.category.delete', $tag->id) }}"
+                        <form action="{{ route('admin.tag.delete', $tag->id) }}"
                               method="post">
                             @csrf
                             @method('delete')

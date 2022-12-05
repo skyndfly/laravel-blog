@@ -34,6 +34,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/{tag}', 'show')->name('admin.tag.show');
         Route::get('/{tag}/edit', 'edit')->name('admin.tag.edit');
         Route::patch('/{tag}', 'update')->name('admin.tag.update');
+        Route::delete('/{tag}', 'delete')->name('admin.tag.delete');
     });
 });
 

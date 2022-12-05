@@ -62,7 +62,7 @@
                                                 <a href="{{route('admin.tag.edit', $tag->id)}}" class="edit">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
-                                                <form action="{{ route('admin.category.delete', $tag->id) }}"
+                                                <form action="{{ route('admin.tag.delete', $tag->id) }}"
                                                       method="post">
                                                     @csrf
                                                     @method('delete')
