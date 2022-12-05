@@ -19,7 +19,7 @@
                 </div>
                 <div class="row">
                     <div class="col action_buttons d-flex gap-2">
-                        <a href="{{route('admin.category.edit', $tag->id)}}" class="btn btn-warning edit">
+                        <a href="{{route('admin.tag.edit', $tag->id)}}" class="btn btn-warning edit">
                             <i class="fa-solid fa-pen-to-square"></i>
                             Редактировать
                         </a>

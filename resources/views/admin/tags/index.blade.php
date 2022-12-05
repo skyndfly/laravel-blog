@@ -59,7 +59,7 @@
                                                 <a href="{{route('admin.tag.show', $tag->id)}}">
                                                     <i class="fa-solid fa-eye"></i>
                                                 </a>
-                                                <a href="{{route('admin.category.edit', $tag->id)}}" class="edit">
+                                                <a href="{{route('admin.tag.edit', $tag->id)}}" class="edit">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
                                                 <form action="{{ route('admin.category.delete', $tag->id) }}"

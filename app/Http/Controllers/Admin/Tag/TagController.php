@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Tag\StoreRequest;
+use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -31,5 +32,14 @@ class TagController extends Controller
     public function show(Tag $tag)
     {
         return view('admin.tags.show', ['tag' => $tag]);
+    }
+    public function edit(Tag $tag){
+        return view('admin.tags.edit', ['tag' => $tag]);
+    }
+    public function update(Tag $tag, StoreRequest $request){
+        $data = $request->validated();
+        $tag->update($data);
+        session('success', 'Тег обновлен');
+        return redirect()->route('admin.tag.edit', ['tag' => $tag]);
     }
 }
