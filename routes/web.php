@@ -40,6 +40,7 @@ Route::prefix('admin')->group(function () {
     Route::prefix('posts')->controller(PostController::class)->group(function(){
         Route::get('/', 'index')->name('admin.post.index');
         Route::get('/create', 'create')->name('admin.post.create');
+        Route::post('/', 'store')->name('admin.post.store');
     });
 
 });

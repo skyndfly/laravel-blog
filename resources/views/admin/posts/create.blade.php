@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <form  method="post" action="{{ route('admin.category.store') }}">
+                        <form  method="post" action="{{ route('admin.post.store') }}">
                             @csrf
                             <div class="mb-3">
                                 <div class="form-group">
