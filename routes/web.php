@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Post\PostController;
 use App\Http\Controllers\Admin\Tag\TagController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,10 @@ Route::prefix('admin')->group(function () {
         Route::patch('/{tag}', 'update')->name('admin.tag.update');
         Route::delete('/{tag}', 'delete')->name('admin.tag.delete');
     });
+    Route::prefix('posts')->controller(PostController::class)->group(function(){
+        Route::get('/', 'index')->name('admin.post.index');
+    });
+
 });
 
 Auth::routes();
