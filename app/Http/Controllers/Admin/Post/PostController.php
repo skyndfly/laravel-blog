@@ -12,4 +12,7 @@ class PostController extends Controller
         $data = Post::all();
         return view('admin.posts.index', ['posts' => $data]);
     }
+    public function create(){
+        return view('admin.posts.create');
+    }
 }

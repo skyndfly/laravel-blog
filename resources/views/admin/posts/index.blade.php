@@ -18,7 +18,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.post.create') }}" class="btn btn-primary">
                             <i class="nav-icon far fa-plus-square"></i>
                             Новый пост
                         </a>

@@ -30,7 +30,7 @@ Route::prefix('admin')->group(function () {
     });
     Route::prefix('tags')->controller(TagController::class)->group(function(){
         Route::get('/', 'index')->name('admin.tag.index');
-        Route::get('create', 'create')->name('admin.tag.create');
+        Route::get('/create', 'create')->name('admin.tag.create');
         Route::post('/', 'store')->name('admin.tag.store');
         Route::get('/{tag}', 'show')->name('admin.tag.show');
         Route::get('/{tag}/edit', 'edit')->name('admin.tag.edit');
@@ -39,6 +39,7 @@ Route::prefix('admin')->group(function () {
     });
     Route::prefix('posts')->controller(PostController::class)->group(function(){
         Route::get('/', 'index')->name('admin.post.index');
+        Route::get('/create', 'create')->name('admin.post.create');
     });
 
 });
