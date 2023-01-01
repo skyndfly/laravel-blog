@@ -14,5 +14,5 @@
 Режим разработки
 
 ```shell
-    composer run dev
+    npm run dev
 ```
